@@ -1,5 +1,3 @@
-name: Ruby
-
 on:
   pull_request:
     branches: [ main ]
@@ -20,11 +18,11 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gems-
       - name: Install jekyll
-      - run: |
+        run: |
           gem install bundler
           bundle install
       - name: Build the default site
-      - run: |
+        run: |
           bundle exec jekyll clean
           bundle exec jekyll          
       - uses: actions/upload-artifact@v2
