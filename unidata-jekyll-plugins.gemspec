@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
     spec.name          = "unidata-jekyll-plugins"
-    spec.version       = "0.0.1"
+    spec.version       = "0.0.2"
     spec.authors       = ["Unidata"]
     spec.email         = ["plaza@unidata.ucar.edu"]
 
