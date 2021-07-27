@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<meta name="doc_version" content="major.minor">
+<title>Include code snippets contained elsewhere in the project | Site Title</title>
+<link rel="stylesheet" href="assets/css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="assets/css/modern-business.css">
+<link rel="stylesheet" href="assets/css/lavish-bootstrap.css">
+<link rel="stylesheet" href="assets/css/customstyles.css">
+<link rel="stylesheet" href="assets/css/theme-unidata.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="assets/js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+  <script>
+    $(document).ready(function () {
+      // Initialize navgoco with default options
+      $("#mysidebar").navgoco({
+        caretHtml: '',
+        accordion: true,
+        openClass: 'active', // open
+        save: false, // leave false or nav highlighting doesn't work right
+        cookie: {
+          name: 'navgoco',
+          expires: false,
+          path: '/'
+        },
+        slide: {
+          duration: 400,
+          easing: 'swing'
+        }
+      });
+
+      $("#collapseAll").click(function (e) {
+        e.preventDefault();
+        $("#mysidebar").navgoco('toggle', false);
+      });
+
+      $("#expandAll").click(function (e) {
+        e.preventDefault();
+        $("#mysidebar").navgoco('toggle', true);
+      });
+
+    });
+
+  </script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#tg-sb-link").click(function () {
+        $("#tg-sb-sidebar").toggle();
+        $("#tg-sb-content").toggleClass('col-md-9');
+        $("#tg-sb-content").toggleClass('col-md-12');
+        $("#tg-sb-icon").toggleClass('fa-toggle-on');
+        $("#tg-sb-icon").toggleClass('fa-toggle-off');
+      });
+    });
+  </script>
+  
+
+</head>
+
+<body>
+  <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html" style="padding-right:0px;">&nbsp;<span class="projectTitle">
+          Topnav Title</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              
+              <li class="dropdown" id="vermenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version major.minor<b class="caret"></b></a>
+                <ul class="dropdown-menu" id="docmenu">
+                  
+                  
+                  <li id="remove"><a href="">Menu Loading...</a></li>
+                  
+                  
+                </ul>
+              </li>
+              
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li><a href="index.html">Unidata Documentation Theme Info</a></li>
+                
+                
+                
+                <li><a href="https://github.com/unidata/unidata-jekyll-theme" target="_blank">GitHub</a></li>
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub (upstream)</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="">
+                        
+                        
+                        <li id=""><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="">
+                        
+                        
+                        <li id=""><a href="mydoc_introduction.html">Upstream Jekyll Documentation Theme Info</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:plaza@unidata.ucar.edu?subject=Documentation Feedback feedback&body=I have some feedback about the Include code snippets contained elsewhere in the project page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="assets/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            var pageLocation = window.location.href;
+                            var searchJson = pageLocation.substring(0, pageLocation.lastIndexOf('/') + 1) + "assets/search/search.json";
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: searchJson,
+                                searchResultTemplate: '<li><a href="{url}" title="Include code snippets contained elsewhere in the project">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div id="main">
+      <!-- Content Row -->
+      <div class="row" id="content">
+        
+        
+        <!-- Sidebar Column -->
+        <div class="col-md-3" id="tg-sb-sidebar">
+          
+
+<ul id="mysidebar" class="nav">
+  <!-- figure out title for sidebar
+     sidebar[0].product -> sidebar[0].title -> site.site_title -> empty
+       (sidebar yaml)       (sidebar yaml)     (_config.yaml)
+    -->
+  
+
+  <!-- figure out title for sidebar
+   sidebar[0].version -> site.docset_version -> empty
+     (sidebar yaml)        (_config.yaml)
+    -->
+  
+
+  
+
+  <!-- Both sidebar_title and sidebar_version defined -->
+  
+  <li class="sidebarTitle"><a href="index.html">Site Title major.minor</a></li>
+  <!-- Only sidebar_title defined -->
+  
+
+  
+  
+  
+      
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li><a title="Working on the theme" href="index.html">Working on the theme</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Markdown" href="#">Markdown</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Headings" href="headings.html">Headings</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="links.html">Links</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Images" href="images.html">Images</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Files" href="files.html">Files</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Highlight Blocks" href="highlight_blocks.html">Highlight Blocks</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Indentation" href="indentation.html">Indentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Theme" href="#">Theme</a>
+      <ul>
+          
+          
+          
+          <li><a title="Upstream Theme Overview" href="upstream_theme.html">Upstream Theme Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Front Matter" href="front_matter.html">Front Matter</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sidebars" href="sidebars.html">Sidebars</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Table Of Contents" href="toc.html">Table Of Contents</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Unidata Jekyll Plugins" href="#">Unidata Jekyll Plugins</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Sharing content between .md files" href="sharing_content.html">Sharing content between .md files</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li class="active"><a title="Include code snippets" href="code_snippets.html">Include code snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Style" href="#">Style</a>
+      <ul>
+          
+          
+          
+          <li><a title="Style guide" href="style.html">Style guide</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+        </div>
+
+        
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+          <div class="post-header">
+   <h1 class="post-title-main">Include code snippets contained elsewhere in the project</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+   <!--
+  If breadcrumbs explicitly set in the front matter of the markdown source, use it.
+  -->
+
+
+
+
+
+
+<div id="breadcrumbs">
+  
+  <a href="index.html" class="bcStart">Site Title</a>
+  
+  
+  <span class="bcEnd">Include code snippets contained elsewhere in the project</span>
+  
+  
+</div>
+
+   <p>To import code snippets directly from project files, use the <code class="language-plaintext highlighter-rouge">"includecodeblock"</code> tag.
+The tag takes the following arguments:</p>
+<ul>
+  <li>name of the project home directory</li>
+  <li>path to the file containing the code snippet, relative to the home directory</li>
+  <li>either:
+    <ul>
+      <li>name of a function to include</li>
+      <li>first and last line numbers of code to include</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Arguments to the tag are separated by the ‘&amp;’ character.</p>
+
+<p>For example, including the function <code class="language-plaintext highlighter-rouge">openNCFile</code> from <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme/source_code_snippet/ReadingCdmTutorial.java</code>
+would be written like this:</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% capture rmd %}
+{% includecodeblock unidata-jekyll-theme&amp;source_code_snippet/ReadingCdmTutorial.java&amp;openNCFile %}
+{% endcapture %}
+{{ rmd | markdownify }}
+
+</code></pre></div></div>
+
+<p>The markdownified text would look like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">try</span> <span class="o">(</span><span class="nc">NetcdfFile</span> <span class="n">ncfile</span> <span class="o">=</span> <span class="nc">NetcdfFiles</span><span class="o">.</span><span class="na">open</span><span class="o">(</span><span class="n">pathToYourFileAsStr</span><span class="o">))</span> <span class="o">{</span>
+  <span class="c1">// Do cool stuff here</span>
+<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IOException</span> <span class="n">ioe</span><span class="o">)</span> <span class="o">{</span>
+  <span class="c1">// Handle less-cool exceptions here</span>
+  <span class="n">logger</span><span class="o">.</span><span class="na">log</span><span class="o">(</span><span class="n">yourOpenNetCdfFileErrorMsgTxt</span><span class="o">,</span> <span class="n">ioe</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Alternatively, to include the same code snippet by line number:</p>
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{% capture rmd %}
+{% includecodeblock unidata-jekyll-theme&amp;source_code_snippet/ReadingCdmTutorial.java&amp;33&amp;38 %}
+{% endcapture %}
+{{ rmd | markdownify }}
+
+</code></pre></div></div>
+
+<p>The include-by-line-numbers option is provided since not all documented code can be isolated in a function.
+However, when code blocks are included by function name, the blocks will update automatically
+if the code is edited such that the line numbers change; for code blocks included by line numbers,
+markdown files will need to be manually updated.</p>
+
+<p>To exclude lines of Java code from the documentation, add the <code class="language-plaintext highlighter-rouge">/* DOCS-IGNORE */</code> tag to the line.
+For example, the following function:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="kd">public</span> <span class="kd">static</span> <span class="nc">Array</span> <span class="nf">readAllVarData</span><span class="o">(</span><span class="nc">Variable</span> <span class="n">v</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">Array</span> <span class="n">data</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+    <span class="k">return</span> <span class="n">data</span><span class="o">;</span> <span class="cm">/* DOCS-IGNORE */</span>
+  <span class="o">}</span>
+</code></pre></div></div>
+
+<p>will render as:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">Array</span> <span class="n">data</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="na">read</span><span class="o">();</span>
+</code></pre></div></div>
+
+<p>The allows code included in the documentation to log or return values for the purpose of testing.</p>
+
+<p>Conversely, the <code class="language-plaintext highlighter-rouge">/* INSERT ... */</code> tag will render enclosed text in the documentation, for example:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/* INSERT private */</span><span class="nc">ArrayInt</span><span class="o">.</span><span class="na">D1</span> <span class="n">dateArray</span><span class="o">;</span>
+</code></pre></div></div>
+
+<p>will render as:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">private</span> <span class="nc">ArrayInt</span><span class="o">.</span><span class="na">D1</span> <span class="n">dateArray</span><span class="o">;</span>
+</code></pre></div></div>
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+
+        </div>
+        
+        <!-- /.row -->
+      </div>
+      <div class="row" id="footer">
+        <footer>
+  <div class="row is-flex">
+    <div class="col-sm-3">
+      <div class="triptych-left">
+        <div class="footer-logos">
+          <a class="noicon" href=""> <img alt="Unidata Jekyll Theme Logo" src="https://docs.unidata.ucar.edu/images/logos/uniLogo.png"/></a>
+        </div>
+        <p class="triptych-header">Site Topic</p>
+        <ul>
+          <li>
+            
+            <span>Page last updated:<br /></span> April 1, 2021
+            
+          </li>
+          <li>
+            Documentation site last generated:<br /> July 27, 2021
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="triptych-center">
+        <div class="footer-logos">
+          <a class="noicon" href="https://www.nsf.gov/"> <img alt="NSF" src="https://docs.unidata.ucar.edu/images/logos/nsf_logo_transparent.png"/></a>
+        </div>
+        <div class="footer-logos" style="padding-right: 1em;">
+          <a class="noicon" href="https://www.ucar.edu/community-programs"> <img alt="UCP" src="https://docs.unidata.ucar.edu/images/logos/ucp-logo2_transparent.png"/></a>
+        </div>
+        <p class="triptych-header">Unidata</p>
+          <p class="triptych-center">
+            Unidata is a member of the
+            <a href="https://www.ucar.edu/community-programs">UCAR Community Programs</a>, managed by the
+            <a href="https://www.ucar.edu">University Corporation for Atmospheric Research</a>, and funded by the
+            <a href="https://www.nsf.gov">National Science Foundation</a>.
+          </p>
+          <p class="triptych-center">
+            Read Unidata's
+            <a href="https://www.unidata.ucar.edu/legal/participation.html">Participation Policy</a>.
+          </p>
+            <table class="triptych-center">
+              <tr>
+                <td style="width:33%;text-align:left;">&copy;2021 UCAR</td>
+                <td style="width:33%;text-align:center;">
+                  <a href="https://www2.ucar.edu/privacy-policy">Privacy Policy</a>
+                </td>
+                <td style="width:33%;text-align:right;">
+                  <a href="https://www2.ucar.edu/terms-of-use">Terms of Use</a>
+                </td>
+              </tr>
+            </table>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="triptych-right">
+        <div class="footer-logos">
+          <a class="noicon" href="https://unidata.ucar.edu/"> <img alt="Unidata Logo" src="https://docs.unidata.ucar.edu/images/logos/unilogo-32x32.png"/></a>
+        </div>
+        <p class="triptych-header">Contact Unidata</p>
+        <ul>
+          <li>
+            For support:
+              <a href="mailto:support@unidata.ucar.edu">support@unidata.ucar.edu</a>
+          </li>
+          <li>
+            By
+              <a href="https://www.unidata.ucar.edu/about/index.html#visit">postal mail</a>
+            or
+              <a href="https://www.unidata.ucar.edu/about/index.html#visit">in person</a>
+          </li>
+          <li>
+            About this website:
+              <a href="mailto:plaza@unidata.ucar.edu">plaza@unidata.ucar.edu</a>
+          </li>
+          <li>
+            By telephone:
+            303.497.8643
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /#main -->
+  </div>
+
+</body>
+
+
+</html>

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content=" ">
+<meta name="doc_version" content="major.minor">
+<title>Getting started with the Unidata Documentation Theme for Jekyll | Site Title</title>
+<link rel="stylesheet" href="assets/css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">-->
+<link rel="stylesheet" href="assets/css/modern-business.css">
+<link rel="stylesheet" href="assets/css/lavish-bootstrap.css">
+<link rel="stylesheet" href="assets/css/customstyles.css">
+<link rel="stylesheet" href="assets/css/theme-unidata.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="assets/js/jquery.navgoco.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="assets/js/toc.js"></script>
+<script src="assets/js/customscripts.js"></script>
+
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+  <script>
+    $(document).ready(function () {
+      // Initialize navgoco with default options
+      $("#mysidebar").navgoco({
+        caretHtml: '',
+        accordion: true,
+        openClass: 'active', // open
+        save: false, // leave false or nav highlighting doesn't work right
+        cookie: {
+          name: 'navgoco',
+          expires: false,
+          path: '/'
+        },
+        slide: {
+          duration: 400,
+          easing: 'swing'
+        }
+      });
+
+      $("#collapseAll").click(function (e) {
+        e.preventDefault();
+        $("#mysidebar").navgoco('toggle', false);
+      });
+
+      $("#expandAll").click(function (e) {
+        e.preventDefault();
+        $("#mysidebar").navgoco('toggle', true);
+      });
+
+    });
+
+  </script>
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#tg-sb-link").click(function () {
+        $("#tg-sb-sidebar").toggle();
+        $("#tg-sb-content").toggleClass('col-md-9');
+        $("#tg-sb-content").toggleClass('col-md-12');
+        $("#tg-sb-icon").toggleClass('fa-toggle-on');
+        $("#tg-sb-icon").toggleClass('fa-toggle-off');
+      });
+    });
+  </script>
+  
+
+</head>
+
+<body>
+  <!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html" style="padding-right:0px;">&nbsp;<span class="projectTitle">
+          Topnav Title</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+              
+              <li class="dropdown" id="vermenu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Version major.minor<b class="caret"></b></a>
+                <ul class="dropdown-menu" id="docmenu">
+                  
+                  
+                  <li id="remove"><a href="">Menu Loading...</a></li>
+                  
+                  
+                </ul>
+              </li>
+              
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <!-- toggle sidebar button -->
+                <li><a id="tg-sb-link" href="#"><i id="tg-sb-icon" class="fa fa-toggle-on"></i> Nav</a></li>
+                <!-- entries without drop-downs appear here -->
+
+
+
+
+                
+                
+                
+                <li class="active"><a href="index.html">Unidata Documentation Theme Info</a></li>
+                
+                
+                
+                <li><a href="https://github.com/unidata/unidata-jekyll-theme" target="_blank">GitHub</a></li>
+                
+                
+                
+                <li><a href="https://github.com/tomjoht/documentation-theme-jekyll" target="_blank">GitHub (upstream)</a></li>
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Jekyll Help<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="">
+                        
+                        
+                        <li id=""><a href="https://talk.jekyllrb.com" target="_blank">Jekyll Talk</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://jekyllrb.com/docs/home/" target="_blank">Jekyll documentation</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://stackoverflow.com/questions/tagged/jekyll" target="_blank">Jekyll on Stack Overflow</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="http://idratherbewriting.com/category-jekyll/" target="_blank">Jekyll on my blog</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Products<b class="caret"></b></a>
+                    <ul class="dropdown-menu" id="">
+                        
+                        
+                        <li id=""><a href="mydoc_introduction.html">Upstream Jekyll Documentation Theme Info</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="p1_landing_page.html">Product 1</a></li>
+                        
+                        
+                        
+                        <li id=""><a href="p2_landing_page.html">Product 2</a></li>
+                        
+                        
+                    </ul>
+                </li>
+                
+                
+                
+			<li>
+
+
+
+  <a class="email" title="Submit feedback" href="#" onclick="javascript:window.location='mailto:plaza@unidata.ucar.edu?subject=Documentation Feedback feedback&body=I have some feedback about the Getting started with the Unidata Documentation Theme for Jekyll page: ' + window.location.href;"><i class="fa fa-envelope-o"></i> Feedback</a>
+
+</li>
+
+		
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="assets/js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            var pageLocation = window.location.href;
+                            var searchJson = pageLocation.substring(0, pageLocation.lastIndexOf('/') + 1) + "assets/search/search.json";
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: searchJson,
+                                searchResultTemplate: '<li><a href="{url}" title="Getting started with the Unidata Documentation Theme for Jekyll">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    <div id="main">
+      <!-- Content Row -->
+      <div class="row" id="content">
+        
+        
+        <!-- Sidebar Column -->
+        <div class="col-md-3" id="tg-sb-sidebar">
+          
+
+<ul id="mysidebar" class="nav">
+  <!-- figure out title for sidebar
+     sidebar[0].product -> sidebar[0].title -> site.site_title -> empty
+       (sidebar yaml)       (sidebar yaml)     (_config.yaml)
+    -->
+  
+
+  <!-- figure out title for sidebar
+   sidebar[0].version -> site.docset_version -> empty
+     (sidebar yaml)        (_config.yaml)
+    -->
+  
+
+  
+
+  <!-- Both sidebar_title and sidebar_version defined -->
+  
+  <li class="sidebarTitle"><a href="index.html">Site Title major.minor</a></li>
+  <!-- Only sidebar_title defined -->
+  
+
+  
+  
+  
+      
+  
+  <li>
+      <a title="Getting Started" href="#">Getting Started</a>
+      <ul>
+          
+          
+          
+          <li class="active"><a title="Working on the theme" href="index.html">Working on the theme</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Markdown" href="#">Markdown</a>
+      <ul>
+          
+          
+          
+          <li><a title="Overview" href="overview.html">Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Headings" href="headings.html">Headings</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Links" href="links.html">Links</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Images" href="images.html">Images</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Files" href="files.html">Files</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Highlight Blocks" href="highlight_blocks.html">Highlight Blocks</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Indentation" href="indentation.html">Indentation</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Theme" href="#">Theme</a>
+      <ul>
+          
+          
+          
+          <li><a title="Upstream Theme Overview" href="upstream_theme.html">Upstream Theme Overview</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Front Matter" href="front_matter.html">Front Matter</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Sidebars" href="sidebars.html">Sidebars</a></li>
+          
+          
+          
+          
+          
+          
+          <li><a title="Table Of Contents" href="toc.html">Table Of Contents</a></li>
+          
+          
+          
+          <li class="subfolders">
+              <a title="Unidata Jekyll Plugins" href="#">Unidata Jekyll Plugins</a>
+              <ul>
+                  
+                  
+                  
+                  <li><a title="Sharing content between .md files" href="sharing_content.html">Sharing content between .md files</a></li>
+                  
+                  
+                  
+                  
+                  
+                  <li><a title="Include code snippets" href="code_snippets.html">Include code snippets</a></li>
+                  
+                  
+                  
+              </ul>
+          </li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+  
+  <li>
+      <a title="Style" href="#">Style</a>
+      <ul>
+          
+          
+          
+          <li><a title="Style guide" href="style.html">Style guide</a></li>
+          
+          
+          
+          
+      </ul>
+   </li>
+     
+      
+      
+      <!-- if you aren't using the accordion, uncomment this block:
+         <p class="external">
+             <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+         </p>
+         -->
+</ul>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+        </div>
+
+        
+        
+
+        <!-- Content Column -->
+        <div class="col-md-9" id="tg-sb-content">
+          <div class="post-header">
+   <h1 class="post-title-main">Getting started with the Unidata Documentation Theme for Jekyll</h1>
+</div>
+
+
+
+<div class="post-content">
+
+   
+
+    
+   <!--
+  If breadcrumbs explicitly set in the front matter of the markdown source, use it.
+  -->
+
+
+
+
+
+
+<div id="breadcrumbs">
+  
+  <a href="index.html" class="bcStart">Site Title</a>
+  
+</div>
+
+   
+<h1 id="unidata-jekyll-theme-and-unidata-jekyll-plugins">unidata-jekyll-theme and unidata-jekyll-plugins</h1>
+
+<p>This repository contains a jekyll theme and associated plugins for Unidata documentation.
+This is a fork of the excellent <a href="https://idratherbewriting.com/documentation-theme-jekyll">documentation-theme-jekyll</a> theme, with Unidata specific styling and extensions.
+In order to work with this repository, you will need to install Ruby.</p>
+
+<h2 id="installing-ruby">Installing Ruby</h2>
+<p>The Jekyll documentation has pointers on how to do that for the <a href="https://jekyllrb.com/docs/installation/">various platforms</a>.
+I was able to do this on Windows without any issues following the <a href="https://jekyllrb.com/docs/installation/windows/#installation-via-rubyinstaller">RubyInstaller</a> instructions.</p>
+
+<h2 id="working-with-this-repository">Working with this repository</h2>
+
+<p>Once you have set up Ruby and cloned the repository, open the command line and go to the root of your local repository and execute the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span>
+</code></pre></div></div>
+
+<p>To live edit the theme in a browser, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div></div>
+
+<p>You should see something similar to the following:</p>
+
+<div class="language-posh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kr">Configuration</span><span class="w"> </span><span class="n">file:</span><span class="w"> </span><span class="nx">C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme/_config.yml</span><span class="w">
+ </span><span class="n">Theme</span><span class="w"> </span><span class="nx">Config</span><span class="w"> </span><span class="nx">file:</span><span class="w"> </span><span class="nx">C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme/_config.yml</span><span class="w">
+            </span><span class="n">Source:</span><span class="w"> </span><span class="nx">C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme</span><span class="w">
+       </span><span class="n">Destination:</span><span class="w"> </span><span class="nx">C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme/_site</span><span class="w">
+ </span><span class="n">Incremental</span><span class="w"> </span><span class="nx">build:</span><span class="w"> </span><span class="nx">disabled.</span><span class="w"> </span><span class="nx">Enable</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nt">--incremental</span><span class="w">
+      </span><span class="n">Generating...</span><span class="w">
+                    </span><span class="nx">done</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">3.96</span><span class="w"> </span><span class="nx">seconds.</span><span class="w">
+  </span><span class="n">Please</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">Gemfile</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">avoid</span><span class="w"> </span><span class="nx">polling</span><span class="w"> </span><span class="nx">for</span><span class="w"> </span><span class="nx">changes:</span><span class="w">
+    </span><span class="n">gem</span><span class="w"> </span><span class="s1">'wdm'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&gt;= 0.1.0'</span><span class="w"> </span><span class="nx">if</span><span class="w"> </span><span class="nx">Gem.win_platform</span><span class="nf">?</span><span class="w">
+ </span><span class="nx">Auto-regeneration:</span><span class="w"> </span><span class="nx">enabled</span><span class="w"> </span><span class="nx">for</span><span class="w"> </span><span class="s1">'C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme'</span><span class="w">
+    </span><span class="n">Server</span><span class="w"> </span><span class="nx">address:</span><span class="w"> </span><span class="nx">http://127.0.0.1:4000</span><span class="w">
+  </span><span class="n">Server</span><span class="w"> </span><span class="nx">running...</span><span class="w"> </span><span class="nx">press</span><span class="w"> </span><span class="nx">ctrl-c</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">stop.</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note the <code class="language-plaintext highlighter-rouge">Server address</code> in the output - this is where you should point your browser to see a live view of the documentation.
+Each time a documentation file is edited and saved, Jekyll will regenerate the html file:</p>
+
+<div class="language-posh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Regenerating:</span><span class="w"> </span><span class="nx">1</span><span class="w"> </span><span class="nx">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="n">changed</span><span class="w"> </span><span class="nx">at</span><span class="w"> </span><span class="nx">2021-04-01</span><span class="w"> </span><span class="nx">13:35:51</span><span class="w">
+              </span><span class="n">pages/unidata/DocGuide.md</span><span class="w">
+              </span><span class="o">...</span><span class="nf">done</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">1.735274</span><span class="w"> </span><span class="nx">seconds.</span><span class="w">
+</span></code></pre></div></div>
+
+<p>To build the static site, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build
+</code></pre></div></div>
+
+<p>If you would like to remove any temporary files generated from the build, run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll clean
+</code></pre></div></div>
+
+<p>Edit away, and get your <code class="language-plaintext highlighter-rouge">git</code> on!</p>
+
+<h2 id="publishing">publishing</h2>
+
+<h3 id="initial-setup">Initial setup</h3>
+
+<p>We will be publishing the gem file for our theme to the Unidata <a href="https://artifacts.unidata.ucar.edu/#browse/browse:gem-unidata">Nexus Repository Manager server</a>.
+In order to do this, you will need to install the <code class="language-plaintext highlighter-rouge">nexus</code> gem:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>nexus
+</code></pre></div></div>
+
+<p>Next, you will need to increment the version(s) of the gem(s) to be published.
+This github repository manages the generation and publication of two Ruby gems, and each are versioned independently.
+A new release of the <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugin</code> gem will be required any time a change is made to the files under the <code class="language-plaintext highlighter-rouge">_plugins/</code> directory.
+All other changes will require a new release of the <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme</code> gem.
+If you need to make new releases for both gems, start by releasing the <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugin</code>, as the <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme</code> depends on it.
+The following steps apply for releasing both the <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme</code> gem as well as the <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugin</code> gem (with one noted exception).</p>
+
+<p>First, change the <code class="language-plaintext highlighter-rouge">spec.version</code> entry in <code class="language-plaintext highlighter-rouge">.gemspec</code> file (following <a href="https://semver.org/">Semantic Versioning</a>).
+Note: if you are updating both gems, you will also need to update the <code class="language-plaintext highlighter-rouge">spec.add_runtime_dependency</code> entry in <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme.gemspec</code> to account for the new plugin version.</p>
+
+<p>Next, build the gem file using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem build &lt;gem-name&gt;.gemspec
+</code></pre></div></div>
+
+<p>For example,</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem build unidata-jekyll-plugins.gemspec
+</code></pre></div></div>
+
+<p>This will create a gem file called <code class="language-plaintext highlighter-rouge">&lt;gem-name&gt;-&lt;version&gt;.gem</code> (e.g. <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugins-0.0.2.gem</code>).</p>
+
+<p>Finally, publish the gem file to the Unidata nexus gem repository using</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem nexus &lt;gem-name&gt;-&lt;version&gt;.gem
+</code></pre></div></div>
+
+<p>For example,</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem nexus unidata-jekyll-plugins-0.0.2.gem
+</code></pre></div></div>
+
+<p>The first time you run this command, the nexus gem will ask you for the url of the server you would like to publish to, as well as your credentials.
+The url you want to use is <code class="language-plaintext highlighter-rouge">https://artifacts.unidata.ucar.edu/repository/gem-unidata</code>.
+These are cached and reused in the future.</p>
+
+<p>Since the theme is consumed by Java projects using <code class="language-plaintext highlighter-rouge">JRuby</code>, we also need to publish the gem files as Maven artifacts.
+This is done using <code class="language-plaintext highlighter-rouge">gradle</code>.
+The gradle build is configured to read the version of each gem from that gems’ associated <code class="language-plaintext highlighter-rouge">gemspec</code> file.
+This means there are no configuration files to update when publishing the Maven artifact of the gem file.
+All that is needed is to run the appropriate task using gradle.</p>
+
+<p>If a new release of the <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugins</code> artifact is needed, publish the corresponding maven artifact using:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew clean publishPlugin
+</code></pre></div></div>
+
+<p>If a new release of the <code class="language-plaintext highlighter-rouge">unidata-jekyll-theme</code> artifact is needed, use:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew clean publishTheme
+</code></pre></div></div>
+
+<p>If both artifacts have a new release, you can publish them both with one command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew clean publish
+</code></pre></div></div>
+
+<p>Note that the gem files must be created using Ruby before publishing them as Maven artifacts.</p>
+
+<p>The full steps needed to publish everything will look something like the following:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">rm</span> .<span class="se">\u</span>nidata-jekyll-plugins-&lt;old-version&gt;.gem
+<span class="nb">rm</span> .<span class="se">\u</span>nidata-jekyll-theme-&lt;old-version&gt;.gem
+
+gem build .<span class="se">\u</span>nidata-jekyll-plugins.gemspec
+gem nexus .<span class="se">\u</span>nidata-jekyll-plugins-&lt;new-version&gt;.gem
+
+gem build .<span class="se">\u</span>nidata-jekyll-theme.gemspec
+gem nexus .<span class="se">\u</span>nidata-jekyll-theme-&lt;new-version&gt;.gem
+
+./gradlew clean publish
+</code></pre></div></div>
+
+<h2 id="using-the-gem-based-theme-in-your-own-documentation">Using the gem-based theme in your own documentation</h2>
+
+<h3 id="ruby">Ruby</h3>
+
+<p>Since the Unidata theme related gem files are hosted on our Nexus server, you will need to tell your Ruby installation that the Nexus server exists:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem sources <span class="nt">--add</span> https://artifacts.unidata.ucar.edu/repository/gems/
+</code></pre></div></div>
+
+<p>Once you have done this, you can generally follow the jekyll documentation regarding the installation and use of a <a href="https://jekyllrb.com/docs/themes/#installing-a-theme">gem based theme</a>.
+You will also need to make sure you include the <code class="language-plaintext highlighter-rouge">unidata-jekyll-plugin</code> gem.
+As this theme progresses, we will add more details about Unidata specific extensions to the theme, but for now, consider this a work in progress :-)</p>
+
+<h3 id="java">Java</h3>
+
+<p>Unidata maintains a <a href="https://github.com/Unidata/unidata-jekyll-gradle">gradle plugin</a> that utilizes JRuby to run Jekyll to build Jekyll sites using the Unidata theme maintained in this repository.
+While useful for Java based projects, it is also useful to those want to build documentation sets without installing the full Ruby stack.
+The only requirement for using the gradle plugin is Java version 8 or greater.</p>
+
+<p>The gradle build in this project uses the <code class="language-plaintext highlighter-rouge">unidata-jekyll-gradle</code> plugin.
+However, if you would like to use the plugin to build and serve the files in this repo, you must make a few edits prior to running <code class="language-plaintext highlighter-rouge">./gradlew buildJekyllSite</code> or <code class="language-plaintext highlighter-rouge">./gradlew serveJekyllSite</code>.</p>
+<ol>
+  <li>edit <code class="language-plaintext highlighter-rouge">_config.yml</code> and comment out the line setting the theme (that is, add a  <code class="language-plaintext highlighter-rouge">#</code> to the beginning of the line <code class="language-plaintext highlighter-rouge">theme: unidata-jekyll-theme</code>)</li>
+  <li>move the file <code class="language-plaintext highlighter-rouge">Gemfile</code> to a temporary directory.</li>
+</ol>
+
+<p>Note that both of these changes <strong>must</strong> be undone before making pull requests with changes or publishing artifacts.
+Once changed, simply execute the following from the command line at the top level of the github repo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./gradlew serveJekyllSite
+</code></pre></div></div>
+
+<p>Jekyll will start:</p>
+
+<div class="language-posh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;</span><span class="w"> </span><span class="n">Task</span><span class="w"> </span><span class="p">:</span><span class="nx">serveJekyllSite</span><span class="w">
+</span><span class="kr">Configuration</span><span class="w"> </span><span class="n">file:</span><span class="w"> </span><span class="nx">C:\Users\sarms\dev\unidata\repos\unidata-jekyll-theme/_config.yml</span><span class="w">
+            </span><span class="n">Source:</span><span class="w"> </span><span class="nx">C:\Users\sarms\dev\unidata\repos\unidata-jekyll-theme</span><span class="w">
+       </span><span class="n">Destination:</span><span class="w"> </span><span class="nx">C:/Users/sarms/dev/unidata/repos/unidata-jekyll-theme/_site</span><span class="w">
+ </span><span class="n">Incremental</span><span class="w"> </span><span class="nx">build:</span><span class="w"> </span><span class="nx">disabled.</span><span class="w"> </span><span class="nx">Enable</span><span class="w"> </span><span class="nx">with</span><span class="w"> </span><span class="nt">--incremental</span><span class="w">
+      </span><span class="n">Generating...</span><span class="w">
+                    </span><span class="nx">done</span><span class="w"> </span><span class="nx">in</span><span class="w"> </span><span class="nx">16.19</span><span class="w"> </span><span class="nx">seconds.</span><span class="w">
+  </span><span class="n">Please</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">the</span><span class="w"> </span><span class="nx">following</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">your</span><span class="w"> </span><span class="nx">Gemfile</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">avoid</span><span class="w"> </span><span class="nx">polling</span><span class="w"> </span><span class="nx">for</span><span class="w"> </span><span class="nx">changes:</span><span class="w">
+    </span><span class="n">gem</span><span class="w"> </span><span class="s1">'wdm'</span><span class="p">,</span><span class="w"> </span><span class="s1">'&gt;= 0.1.0'</span><span class="w"> </span><span class="nx">if</span><span class="w"> </span><span class="nx">Gem.win_platform</span><span class="nf">?</span><span class="w">
+ </span><span class="nx">Auto-regeneration:</span><span class="w"> </span><span class="nx">enabled</span><span class="w"> </span><span class="nx">for</span><span class="w"> </span><span class="s1">'C:\Users\sarms\dev\unidata\repos\unidata-jekyll-theme'</span><span class="w">
+    </span><span class="n">Server</span><span class="w"> </span><span class="nx">address:</span><span class="w"> </span><span class="nx">http://127.0.0.1:4000</span><span class="w">
+  </span><span class="n">Server</span><span class="w"> </span><span class="nx">running...</span><span class="w"> </span><span class="nx">press</span><span class="w"> </span><span class="nx">ctrl-c</span><span class="w"> </span><span class="nx">to</span><span class="w"> </span><span class="nx">stop.</span><span class="w">
+</span><span class="err">&lt;</span><span class="o">========-----</span><span class="err">&gt;</span><span class="w"> </span><span class="mi">66</span><span class="o">%</span><span class="w"> </span><span class="n">EXECUTING</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="n">m</span><span class="w"> </span><span class="nx">5s</span><span class="p">]</span><span class="w">
+</span><span class="err">&gt;</span><span class="w"> </span><span class="p">:</span><span class="n">serveJekyllSite</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Note the <code class="language-plaintext highlighter-rouge">Server address</code> in the output - this is where you should point your browser to see a live view of the documentation.
+Each time a documentation file is edited and saved, Jekyll will regenerate the html file:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Regenerating: 1 file<span class="o">(</span>s<span class="o">)</span> changed at 2021-04-01 13:43:40
+              pages/unidata/DocGuide.md
+              ...done <span class="k">in </span>8.897 seconds.
+</code></pre></div></div>
+
+<h2 id="potentially-useful-utilities">Potentially useful utilities</h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">utilities/</code> directory contains some potentially useful scripts from the upstream repository for generating tags and pdf docs.
+They were sort of cluttering up the main directory of the repo, so I moved them.</p>
+
+
+
+    <div class="tags">
+        
+    </div>
+
+
+
+
+</div>
+
+
+        </div>
+        
+        <!-- /.row -->
+      </div>
+      <div class="row" id="footer">
+        <footer>
+  <div class="row is-flex">
+    <div class="col-sm-3">
+      <div class="triptych-left">
+        <div class="footer-logos">
+          <a class="noicon" href=""> <img alt="Unidata Jekyll Theme Logo" src="https://docs.unidata.ucar.edu/images/logos/uniLogo.png"/></a>
+        </div>
+        <p class="triptych-header">Site Topic</p>
+        <ul>
+          <li>
+            
+          </li>
+          <li>
+            Documentation site last generated:<br /> July 27, 2021
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-sm-6">
+      <div class="triptych-center">
+        <div class="footer-logos">
+          <a class="noicon" href="https://www.nsf.gov/"> <img alt="NSF" src="https://docs.unidata.ucar.edu/images/logos/nsf_logo_transparent.png"/></a>
+        </div>
+        <div class="footer-logos" style="padding-right: 1em;">
+          <a class="noicon" href="https://www.ucar.edu/community-programs"> <img alt="UCP" src="https://docs.unidata.ucar.edu/images/logos/ucp-logo2_transparent.png"/></a>
+        </div>
+        <p class="triptych-header">Unidata</p>
+          <p class="triptych-center">
+            Unidata is a member of the
+            <a href="https://www.ucar.edu/community-programs">UCAR Community Programs</a>, managed by the
+            <a href="https://www.ucar.edu">University Corporation for Atmospheric Research</a>, and funded by the
+            <a href="https://www.nsf.gov">National Science Foundation</a>.
+          </p>
+          <p class="triptych-center">
+            Read Unidata's
+            <a href="https://www.unidata.ucar.edu/legal/participation.html">Participation Policy</a>.
+          </p>
+            <table class="triptych-center">
+              <tr>
+                <td style="width:33%;text-align:left;">&copy;2021 UCAR</td>
+                <td style="width:33%;text-align:center;">
+                  <a href="https://www2.ucar.edu/privacy-policy">Privacy Policy</a>
+                </td>
+                <td style="width:33%;text-align:right;">
+                  <a href="https://www2.ucar.edu/terms-of-use">Terms of Use</a>
+                </td>
+              </tr>
+            </table>
+      </div>
+    </div>
+
+    <div class="col-sm-3">
+      <div class="triptych-right">
+        <div class="footer-logos">
+          <a class="noicon" href="https://unidata.ucar.edu/"> <img alt="Unidata Logo" src="https://docs.unidata.ucar.edu/images/logos/unilogo-32x32.png"/></a>
+        </div>
+        <p class="triptych-header">Contact Unidata</p>
+        <ul>
+          <li>
+            For support:
+              <a href="mailto:support@unidata.ucar.edu">support@unidata.ucar.edu</a>
+          </li>
+          <li>
+            By
+              <a href="https://www.unidata.ucar.edu/about/index.html#visit">postal mail</a>
+            or
+              <a href="https://www.unidata.ucar.edu/about/index.html#visit">in person</a>
+          </li>
+          <li>
+            About this website:
+              <a href="mailto:plaza@unidata.ucar.edu">plaza@unidata.ucar.edu</a>
+          </li>
+          <li>
+            By telephone:
+            303.497.8643
+          </li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+      </div>
+      <!-- /.container -->
+    </div>
+    <!-- /#main -->
+  </div>
+
+</body>
+
+
+</html>

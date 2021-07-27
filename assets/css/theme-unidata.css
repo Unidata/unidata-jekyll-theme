@@ -1,0 +1,199 @@
+.summary {
+    color: #808080;
+    border-left: 5px solid #ED1951;
+    font-size:16px;
+}
+
+h1, h2, h3, h4, h5 {
+  color: #034250;
+}
+
+p {
+    margin-top: 20px;
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    background-color: #06778F; /* was #248ec2 */
+    color: white;
+}
+
+.nav > li.active > a {
+    background-color: #034250; /* was #347DBE */
+}
+
+.nav > li > a:hover {
+    background-color: #06778F; /* was #248ec2 */
+}
+
+div.navbar-collapse .dropdown-menu > li > a:hover {
+    background-color: #034250; /* was #347DBE */
+}
+
+.nav li.thirdlevel > a {
+    background-color: #FAFAFA !important;
+    color: #06778F; /* was #248ec2 */
+    font-weight: bold;
+}
+
+a[data-toggle="tooltip"] {
+    color: #649345;
+    font-style: italic;
+    cursor: default;
+}
+
+.navbar-inverse {
+    background-color: #06778F;
+    border-color: #034250;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    color: #034250;
+}
+
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #034250;
+    color: #ffffff;
+}
+
+/* not sure if using this ...*/
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
+    border-color: #248ec2 !important;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #034250; /* was #347DBE */
+    border-color: #034250; /* was #347DBE */
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #034250; /* was #347DBE */
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-color: #06778F; /* was #248ec2 */
+    border-color: #034250; /* was #347DBE */
+}
+
+.printTitle {
+    color: #034250 !important;
+}
+
+.anchorjs-link:hover {
+    color: #216f9b;
+}
+
+div.sidebarTitle {
+    color: #034250;
+}
+
+li.sidebarTitle {
+    margin-top:40px;
+    font-weight:normal;
+    font-size:130%;
+    color: #034250;
+    margin-bottom:10px;
+    margin-left: 5px;
+
+}
+
+.nav .sidebarTitle a,
+.nav .sidebarTitle a:active,
+.nav .sidebarTitle a:hover,
+.nav .sidebarTitle a:focus {
+    background-color: #FFFFFF;
+    color: #034250 !important;
+    font-size:120%;
+    padding: 0;
+    margin:0 0 20px 0;
+}
+
+/* left-floated version menu */ /* DD 2020_04 */
+@media (min-width: 768px) {
+  ul.navbar-left > li#vermenu > a {
+    font-size: 18px;
+    font-weight: 600;
+  }
+}
+
+/* bread crumbs */
+#breadcrumbs {
+    color: #8D8D8D;
+    font-size: 12px;
+    border-bottom: 1px solid #DCDCDC;
+}
+#breadcrumbs .bcEnd {
+    font-weight: bold;
+}
+
+.bcEnd::before {
+    content: " \2192\0020 "
+}
+
+/* table of contents */
+div#toc {
+    position: fixed;
+    top: 100px;
+    margin-top: 40px;
+    background: #FFFFFF;
+}
+
+div#toc.fa-list-ul {
+    color: #666666;
+}
+div#toc>ul::before {
+    font-size:130%;
+    content: 'On This Page: ';
+    padding: 0 0 0 20px !important;
+    position: relative;
+    top: -18px;
+    color: #8D8D8D;
+}
+
+div#toc ul {
+    background: none;
+    margin: 0 0 0 5px;
+    padding: 0;
+    border-radius: 0;
+    /* Need the font-family here to negate the font style of the fa-list-ul class. */
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size:100%;
+}
+
+div#toc ul li {
+    font-size: 100% !important;
+    list-style: disc;
+}
+
+div#toc ul li ul li::before {
+    content: "\25E6\00A0   ";
+}
+
+/* info.html alert callout */
+.alert-more-info {
+    background-color: #d9e0f7;
+    border-color: #bec3d6;
+    color: #7f8794;
+}
+
+/* page layout */
+.container {
+    max-width:100%;
+}
+
+#content {
+    border-bottom: 4px solid #DCDCDC;
+}
+#footer {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    max-width: 1000px;
+}
+
+
