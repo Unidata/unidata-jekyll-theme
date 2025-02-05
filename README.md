@@ -132,3 +132,36 @@ As this theme progresses, we will add more details about Unidata specific extens
 The `utilities/` directory contains some potentially useful scripts from the upstream repository for generating tags and pdf docs.
 They were sort of cluttering up the main directory of the repo, so I moved them.
 
+## Build docs using docker
+
+To serve the unidata-jekyll-theme using the unidata-jekyll-docs image, go to the top of this repository and run:
+
+```shell
+docker run -it --rm -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -p 4000:4000 docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.4 serve --livereload
+```
+
+The SRC_DIR environment variable must be set.
+It should be the path to the directory _inside the container_ that holds the jekyll `_config.yml` file.
+This should be a directory at or under the bind mount point.
+
+Similarly, to build using the unidata-jekyll-docs image:
+
+```shell
+docker run -it --rm -e DOCS_UID=$(id -u) -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -v ./_site:/site docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.4 build
+```
+
+Note the additional bind mount `-v ./_site:/site` and the inclusion of `-e DOCS_UID=$(id -u)`.
+The additional bind mount is used define where the rendered documentation should be saved.
+The `DOCS_UID` environment variable is used to ensure the permissions of the rendered site files are correct.
+
+### A note on SRC_DIR
+
+Coordinating `SRC_DIR` and the bind mount containing the necessary files for a successful build can be tricky when the `includecodeblock` functionality of the unidata-jekyll-plugins is used.
+
+For example, to serve the documentation of the netCDF-Java project for live editing, you would run the following from the root directory of the project:
+
+```sh
+docker run -it --rm -e SRC_DIR="/netcdf-java/docs/src/site" -v .:/netcdf-java -p 4005:4005 unidata-jekyll-docs:latest serve --livereload
+```
+
+Because the netCDF-Java documentation uses code snippets from outside the main documentation directory (`/netcdf-java/docs/src/site`), we have to bind mount the entire project.

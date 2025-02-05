@@ -2,7 +2,8 @@
 
 Gem::Specification.new do |spec|
     spec.name          = "unidata-jekyll-plugins"
-    spec.version       = "0.0.2"
+    spec.version       = "0.0.3"
+    spec.required_ruby_version = ">= 3.4.1"
     spec.authors       = ["Unidata"]
     spec.email         = ["plaza@unidata.ucar.edu"]
 
@@ -14,5 +15,5 @@ Gem::Specification.new do |spec|
     spec.files       = all_files.grep(%r!^(_plugins)/!)
     spec.require_paths = ["_plugins"]
 
-    spec.add_runtime_dependency "jekyll"
+    spec.add_runtime_dependency "jekyll", "~> 4.4.1"
   end
