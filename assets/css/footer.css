@@ -46,11 +46,13 @@ footer p.triptych-header {
   border-bottom: 2px solid #CCCCCC;
   /* max-width: 95%; */
   /* margin: 10px; */
-  padding: 5px 0 5px 0;
+  padding: 0 0 5px 0;
+  margin-top: revert;
 }
 
 footer p.triptych-center {
   text-align: center;
+  margin:unset;
 }
 
 footer table.triptych-center {
@@ -72,11 +74,24 @@ footer div.footer-logos {
   float: right;
   max-height: 30px;
 }
+
 footer div.footer-logos img {
 	position: relative;
 	height: 24px;
-	top: 2px;
+	top: 6px;
 	float:right;
+}
+
+footer div.footer-logos-left {
+  float:left;
+  max-height: 30px;
+}
+
+footer div.footer-logos-left img {
+	position: relative;
+	height: 30px;
+	top: 4px;
+	float:left;
 }
 
 footer div.row div[class*='col-'] ul {
