@@ -41,6 +41,11 @@ a[data-toggle="tooltip"] {
     cursor: default;
 }
 
+/* Prevent navbar wrapping to fit within content div width */
+.navbar > .container.topnavlinks {
+  box-sizing: content-box;
+}
+
 .navbar-inverse {
     background-color: #06778F;
     border-color: #034250;
@@ -180,20 +185,8 @@ div#toc ul li ul li::before {
     color: #7f8794;
 }
 
-/* page layout */
-.container {
-    max-width:100%;
-}
-
 #content {
     border-bottom: 4px solid #DCDCDC;
-}
-#footer {
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    max-width: 1000px;
 }
 
 
