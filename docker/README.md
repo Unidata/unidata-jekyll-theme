@@ -12,11 +12,11 @@ Release
 * run `build.sh` to create a local multi-platform image
 * tag the latest image with the release version for docker.unidata.ucar.edu and ghcr:
   ```
-  docker image tag unidata-jekyll-docs:latest docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.4
-  docker image tag unidata-jekyll-docs:latest ghcr.io/unidata/unidata-jekyll-docs:0.0.4
+  docker image tag unidata-jekyll-docs:latest docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.5
+  docker image tag unidata-jekyll-docs:latest ghcr.io/unidata/unidata-jekyll-docs:0.0.5
   ```
 * push the new images
   ```
-  docker image push docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.4
-  docker image push ghcr.io/unidata/unidata-jekyll-docs:0.0.4
+  docker image push docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.5
+  docker image push ghcr.io/unidata/unidata-jekyll-docs:0.0.5
   ```
