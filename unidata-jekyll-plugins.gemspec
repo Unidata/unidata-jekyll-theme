@@ -3,7 +3,7 @@
 Gem::Specification.new do |spec|
     spec.name          = "unidata-jekyll-plugins"
     spec.version       = "0.0.3"
-    spec.required_ruby_version = ">= 3.4.1"
+    spec.required_ruby_version = ">= 3.4.5"
     spec.authors       = ["Unidata"]
     spec.email         = ["plaza@unidata.ucar.edu"]
 
