@@ -64,13 +64,15 @@ entries:
               - title: Unidata Jekyll Plugins
                 output: web, pdf
                 subfolderitems:
+                - title: Annotated code blocks
+                  url: /annotated_code_blocks.html
+                  output: web, pdf
                 - title: Sharing content between .md files
                   url: /sharing_content.html
                   output: web, pdf
                 - title: Include code snippets
                   url: /code_snippets.html
                   output: web, pdf
-
       - title: Style
         output: web, pdf
         folderitems:

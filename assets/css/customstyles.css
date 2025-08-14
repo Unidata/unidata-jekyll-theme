@@ -1231,3 +1231,37 @@ h4.panel-title {
     display:block !important;
   }
 }
+
+.code-annotation[annotation-number] {
+  border: 1px solid;
+  border-radius: 100%;
+  display: inline-block;
+  font-size: .75rem;
+  font-size: calc(13.5/var(--rem-base)*1rem);
+  font-style: normal;
+  height: 1.25em;
+  letter-spacing: -.25ex;
+  line-height: 1.2;
+  text-align: center;
+  text-indent: -.4ex;
+  width: 1.8em;
+  margin-left: 0.3em;
+  color: black;
+}
+
+.code-annotation[annotation-number]::after {
+  content: attr(annotation-number);
+  padding-left: 0.1em;
+}
+
+.code-annotation[annotation-number]+b {
+  display: none
+}
+
+figure.highlight pre, pre.highlight {
+  overflow-x: scroll;
+}
+
+figure.highlight code, pre.highlight code {
+  white-space: pre;
+}
