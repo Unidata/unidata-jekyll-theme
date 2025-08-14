@@ -17,8 +17,8 @@ Your `Gemfile` should, at a minimum, look like:
 ```shell
 source 'https://artifacts.unidata.ucar.edu/repository/gems/'
 
-gem 'unidata-jekyll-theme', '0.0.5'
-gem 'unidata-jekyll-plugins', '0.0.3'
+gem 'unidata-jekyll-theme', '0.0.6'
+gem 'unidata-jekyll-plugins', '0.0.4'
 ```
 
 Jekyll is listed as a dependency of the `unidata-jekyll-theme`, so you do no need to explicitly list its `gem`.
@@ -29,7 +29,7 @@ Check out the [Building and live editing](#Building-and-live-editing) section fo
 To serve the unidata-jekyll-theme using the unidata-jekyll-docs image, go to the top of this repository and run:
 
 ```shell
-docker run -it --rm -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -p 4000:4000 docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.5 serve --livereload
+docker run -it --rm -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -p 4000:4000 docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6 serve --livereload
 ```
 
 The SRC_DIR environment variable must be set.
@@ -39,7 +39,7 @@ This should be a directory at or under the bind mount point.
 Similarly, to build using the unidata-jekyll-docs image:
 
 ```shell
-docker run -it --rm -e DOCS_UID=$(id -u) -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -v ./_site:/site docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.5 build
+docker run -it --rm -e DOCS_UID=$(id -u) -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -v ./_site:/site docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6 build
 ```
 
 Note the additional bind mount `-v ./_site:/site` and the inclusion of `-e DOCS_UID=$(id -u)`.
@@ -136,6 +136,8 @@ In order to do this, you will need to install the `nexus` gem:
 gem install nexus
 ~~~
 
+Note, you will need to redo this if you have updated your Ruby installation.
+
 #### Release
 
 Next, you will need to increment the version(s) of the gem(s) to be published.
@@ -160,7 +162,7 @@ For example,
 gem build unidata-jekyll-plugins.gemspec
 ~~~
 
-This will create a gem file called `<gem-name>-<version>.gem` (e.g. `unidata-jekyll-plugins-0.0.2.gem`).
+This will create a gem file called `<gem-name>-<version>.gem` (e.g. `unidata-jekyll-plugins-0.0.4.gem`).
 
 Finally, publish the gem file to the Unidata nexus gem repository using
 
@@ -171,7 +173,7 @@ gem nexus <gem-name>-<version>.gem
 For example,
 
 ~~~sh
-gem nexus unidata-jekyll-plugins-0.0.2.gem
+gem nexus unidata-jekyll-plugins-0.0.4.gem
 ~~~
 
 The first time you run this command, the nexus gem will ask you for the url of the server you would like to publish to, as well as your credentials.
