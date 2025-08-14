@@ -65,6 +65,7 @@ In order to work with this repository, you will need to install Ruby.
 ### Installing Ruby
 The Jekyll documentation has pointers on how to do that for the [various platforms](https://jekyllrb.com/docs/installation/).
 I was able to do this on Windows and Mac without any issues following the [RubyInstaller](https://jekyllrb.com/docs/installation/windows/#installation-via-rubyinstaller) instructions.
+The current minimum version of Ruby supported is 3.4.5.
 
 ### Building and live editing
 
