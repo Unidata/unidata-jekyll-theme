@@ -1,5 +1,5 @@
 source 'https://artifacts.unidata.ucar.edu/repository/gems/'
 
-gem 'unidata-jekyll-theme', '0.0.5'
-gem 'unidata-jekyll-plugins', '0.0.3'
+gem 'unidata-jekyll-theme', '0.0.6'
+gem 'unidata-jekyll-plugins', '0.0.4'
 
