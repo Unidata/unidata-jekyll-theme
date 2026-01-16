@@ -1,8 +1,10 @@
 Release
 
-* make sure you are logged into the artifacts server using docker
+Perform the following steps once a release has been made and tagged on GitHub:
+
+* make sure you are logged into dockerhub
   ```
-  docker login docker.unidata.ucar.edu -u <nexus-username>
+  docker login docker.io -u <dockerhub-username>
   ```
 * make sure you are logged into the GitHub Container Registry (using a classic personal access token [following these instructions](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-to-the-container-registry))
   ```
@@ -10,13 +12,13 @@ Release
   ```
 * bump theme/plugin versions in the Gemfile contained in this directory
 * run `build.sh` to create a local multi-platform image
-* tag the latest image with the release version for docker.unidata.ucar.edu and ghcr:
+* tag the latest image with the release version for docker.io and ghcr:
   ```
-  docker image tag unidata-jekyll-docs:latest docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6
+  docker image tag unidata-jekyll-docs:latest docker.io/unidata/unidata-jekyll-docs:0.0.6
   docker image tag unidata-jekyll-docs:latest ghcr.io/unidata/unidata-jekyll-docs:0.0.6
   ```
 * push the new images
   ```
-  docker image push docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6
+  docker image push docker.io/unidata/unidata-jekyll-docs:0.0.6
   docker image push ghcr.io/unidata/unidata-jekyll-docs:0.0.6
   ```
