@@ -15,13 +15,17 @@ The jekyll documentation will get you a long way.
 Your `Gemfile` should, at a minimum, look like:
 
 ```shell
-source 'https://artifacts.unidata.ucar.edu/repository/gems/'
-
-gem 'unidata-jekyll-theme', '0.0.6'
 gem 'unidata-jekyll-plugins', '0.0.4'
+
+git 'https://github.com/Unidata/unidata-jekyll-theme.git', tag: 'v0.0.6' do
+  gem 'unidata-jekyll-theme'
+  gem 'unidata-jekyll-plugins'
+end
 ```
 
-Jekyll is listed as a dependency of the `unidata-jekyll-theme`, so you do no need to explicitly list its `gem`.
+Note that we used to build and publish .gem files for the theme and plugins to the unidata artifacts server, but no longer do so.
+
+Jekyll is listed as a dependency of the `unidata-jekyll-theme`, so you do not need to explicitly list its `gem`.
 Check out the [Building and live editing](#Building-and-live-editing) section for information on how to build and live edit jekyll documentation.
 
 ### Build docs using docker
@@ -29,7 +33,7 @@ Check out the [Building and live editing](#Building-and-live-editing) section fo
 To serve the unidata-jekyll-theme using the unidata-jekyll-docs image, go to the top of this repository and run:
 
 ```shell
-docker run -it --rm -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -p 4000:4000 docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6 serve --livereload
+docker run -it --rm -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -p 4000:4000 docker.io/unidata/unidata-jekyll-docs:0.0.6 serve --livereload
 ```
 
 The SRC_DIR environment variable must be set.
@@ -39,7 +43,7 @@ This should be a directory at or under the bind mount point.
 Similarly, to build using the unidata-jekyll-docs image:
 
 ```shell
-docker run -it --rm -e DOCS_UID=$(id -u) -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -v ./_site:/site docker.unidata.ucar.edu/unidata-jekyll-docs:0.0.6 build
+docker run -it --rm -e DOCS_UID=$(id -u) -e SRC_DIR="/unidata-jekyll-theme" -v .:/unidata-jekyll-theme -v ./_site:/site docker.io/unidata/unidata-jekyll-docs:0.0.6 build
 ```
 
 Note the additional bind mount `-v ./_site:/site` and the inclusion of `-e DOCS_UID=$(id -u)`.
@@ -60,7 +64,7 @@ Because the netCDF-Java documentation uses code snippets from outside the main d
 
 ## Working with this repository
 
-In order to work with this repository, you will need to install Ruby.
+To work with this repository, you will need to install Ruby.
 
 ### Installing Ruby
 The Jekyll documentation has pointers on how to do that for the [various platforms](https://jekyllrb.com/docs/installation/).
@@ -125,57 +129,11 @@ Edit away, and get your `git` on!
 The `utilities/` directory contains some potentially useful scripts from the upstream repository for generating tags and pdf docs.
 They were sort of cluttering up the main directory of the repo, so I moved them.
 
-### Publishing
+## Release
 
-#### Initial setup
-
-We will be publishing the gem file for our theme to the Unidata [Nexus Repository Manager server](https://artifacts.unidata.ucar.edu/#browse/browse:gem-unidata).
-In order to do this, you will need to install the `nexus` gem:
-
-~~~sh
-gem install nexus
-~~~
-
-Note, you will need to redo this if you have updated your Ruby installation.
-
-#### Release
-
-Next, you will need to increment the version(s) of the gem(s) to be published.
-This github repository manages the generation and publication of two Ruby gems, and each are versioned independently.
-A new release of the `unidata-jekyll-plugin` gem will be required any time a change is made to the files under the `_plugins/` directory.
-All other changes will require a new release of the `unidata-jekyll-theme` gem.
-If you need to make new releases for both gems, start by releasing the `unidata-jekyll-plugin`, as the `unidata-jekyll-theme` depends on it.
-The following steps apply for releasing both the `unidata-jekyll-theme` gem as well as the `unidata-jekyll-plugin` gem (with one noted exception).
-
-First, change the `spec.version` entry in `.gemspec` file (following [Semantic Versioning](https://semver.org/)).
-Note: if you are updating both gems, you will also need to update the `spec.add_runtime_dependency` entry in `unidata-jekyll-theme.gemspec` to account for the new plugin version.
-
-Next, build the gem file using:
-
-~~~sh
-gem build <gem-name>.gemspec
-~~~
-
-For example,
-
-~~~sh
-gem build unidata-jekyll-plugins.gemspec
-~~~
-
-This will create a gem file called `<gem-name>-<version>.gem` (e.g. `unidata-jekyll-plugins-0.0.4.gem`).
-
-Finally, publish the gem file to the Unidata nexus gem repository using
-
-~~~sh
-gem nexus <gem-name>-<version>.gem
-~~~
-
-For example,
-
-~~~sh
-gem nexus unidata-jekyll-plugins-0.0.4.gem
-~~~
-
-The first time you run this command, the nexus gem will ask you for the url of the server you would like to publish to, as well as your credentials.
-The url you want to use is `https://artifacts.unidata.ucar.edu/repository/gem-unidata`.
-These are cached and reused in the future.
+To release a new version of the theme, bump the versions in the .gemspec files as needed.
+Update the tag referenced in example Gemfile in this README.md document, as well as `docker/Gemfile` and any other references to the theme version.
+Commit the changes, push to GitHub and create a PR.
+Once the changes are merged, create a new release on GitHub.
+Finally, pull down the new tag and build/publish the docker images as described in docker/README.md.
+Note: while the gemspecs are versioned independently, the theme is accessed based on the version of the GitHub release.
