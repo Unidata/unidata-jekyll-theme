@@ -20,7 +20,7 @@ site_topic: Site Topic
 company_name: Unidata
 
 # project logo (32x32), name, main landing page  (currently used in the footer)
-project_logo: https://docs.unidata.ucar.edu/images/logos/uniLogo.png
+project_logo: https://assets.unidata.ucar.edu/images/logos/uniLogo.png
 project_name: Unidata Jekyll Theme
 project_landing_page: https://unidata.ucar.edu/
 
