@@ -15,7 +15,7 @@ The jekyll documentation will get you a long way.
 Your `Gemfile` should, at a minimum, look like:
 
 ```shell
-gem 'unidata-jekyll-plugins', '0.0.4'
+source 'https://rubygems.org'
 
 git 'https://github.com/Unidata/unidata-jekyll-theme.git', tag: 'v0.0.6' do
   gem 'unidata-jekyll-theme'
