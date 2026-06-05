@@ -5,47 +5,26 @@ toc: false
 sidebar: unidata_sidebar
 permalink: custom_css.html
 ---
-You can add custom CSS to your project without having to modify the existing theme.
+You can add custom CSS to your project without having to modify the existing theme by following these steps:
 
-Jekyll comes bundled with SCSS (Sassy CSS) converter plugin which automatically compiles SCSS files into standard CSS when it builds your project documenation.
+1. Create The `customstyles.css` File
 
-## Create The `customstyles.scss` File
+   Create `assets/css/customstyles.css` directly in the top level documentation directory:
 
-Create `assets/css/customstyles.scss` directly in the top level documentation directory:
+   ```none
+   project_docs/
+   ├── _data/
+   ├── assets/                    <──┐
+   │   └── css/                   <──┤  Create these
+   │       └── customstyles.css   <──┘
+   ├── images/
+   ├── pages/
+   ├── Gemfile
+   ├── _config.yml
+   ├── ...
+   ```
 
-```none
-project_docs/
-├── _data/
-├── assets/                     <──┐
-│   └── css/                    <──┤  Create these
-│       └── customstyles.scss   <──┘
-├── images/
-├── pages/
-├── Gemfile
-├── _config.yml
-├── ...
-```
+2. Add Your Custom CSS
 
-## Add Jekyll Hooks To `customstyles.scss`
-
-Add the following content exactly as it appears to the `customstyles.scss` file:
-
-```scss
----
----
-@import "unidata-jekyll-theme";
-
-// custom css here
-```
-
-The two lines of triple dashes (`---`) at the top of the file tells Jekyll to process the file.
-The `@import "unidata-jekyll-theme";` lines tells Jekyll to use the Unidata theme.
-
-## Add Your Custom CSS
-
-Replace the  `// custom css here` with your custom css.  
-Jekyll will merge this CSS into the main Unidata theme's `assets/css/customstyles.css` file as it compiles the project.
-
-{%include info.html content="
-For more information about the Jekyll SCSS converter, see: <https://jekyllrb.com/docs/configuration/sass/>
-" %}
+   Add your custom CSS to the `assets/css/customstyles.css` file you just created.
+   Jekyll will insert the content of this CSS file into the main Unidata theme's `customstyles.css` file as it compiles the project.
